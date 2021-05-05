@@ -69,19 +69,19 @@ VdpCodec get_VdpCodec(VdpDecoderProfile profile)
 VdpDecoderProfile get_VdpDecoderProfile(VAProfile profile)
 {
     switch (profile) {
-    case VAProfileMPEG2Simple:  return VDP_DECODER_PROFILE_MPEG2_SIMPLE;
-    case VAProfileMPEG2Main:    return VDP_DECODER_PROFILE_MPEG2_MAIN;
+    case VAProfileMPEG2Simple:             return VDP_DECODER_PROFILE_MPEG2_SIMPLE;
+    case VAProfileMPEG2Main:               return VDP_DECODER_PROFILE_MPEG2_MAIN;
 #if USE_VDPAU_MPEG4
-    case VAProfileMPEG4Simple:  return VDP_DECODER_PROFILE_MPEG4_PART2_SP;
-    case VAProfileMPEG4AdvancedSimple: return VDP_DECODER_PROFILE_MPEG4_PART2_ASP;
+    case VAProfileMPEG4Simple:             return VDP_DECODER_PROFILE_MPEG4_PART2_SP;
+    case VAProfileMPEG4AdvancedSimple:     return VDP_DECODER_PROFILE_MPEG4_PART2_ASP;
 #endif
-    case VAProfileH264Baseline: return VDP_DECODER_PROFILE_H264_BASELINE;
-    case VAProfileH264Main:     return VDP_DECODER_PROFILE_H264_MAIN;
-    case VAProfileH264High:     return VDP_DECODER_PROFILE_H264_HIGH;
-    case VAProfileVC1Simple:    return VDP_DECODER_PROFILE_VC1_SIMPLE;
-    case VAProfileVC1Main:      return VDP_DECODER_PROFILE_VC1_MAIN;
-    case VAProfileVC1Advanced:  return VDP_DECODER_PROFILE_VC1_ADVANCED;
-    default:                    break;
+    case VAProfileH264ConstrainedBaseline: return VDP_DECODER_PROFILE_H264_BASELINE;
+    case VAProfileH264Main:                return VDP_DECODER_PROFILE_H264_MAIN;
+    case VAProfileH264High:                return VDP_DECODER_PROFILE_H264_HIGH;
+    case VAProfileVC1Simple:               return VDP_DECODER_PROFILE_VC1_SIMPLE;
+    case VAProfileVC1Main:                 return VDP_DECODER_PROFILE_VC1_MAIN;
+    case VAProfileVC1Advanced:             return VDP_DECODER_PROFILE_VC1_ADVANCED;
+    default:                               break;
     }
     return (VdpDecoderProfile)-1;
 }
@@ -1058,7 +1058,7 @@ vdpau_QueryConfigProfiles(
         VAProfileMPEG4Simple,
         VAProfileMPEG4AdvancedSimple,
         VAProfileMPEG4Main,
-        VAProfileH264Baseline,
+        VAProfileH264ConstrainedBaseline,
         VAProfileH264Main,
         VAProfileH264High,
         VAProfileVC1Simple,
